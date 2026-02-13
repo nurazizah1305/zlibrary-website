@@ -1,0 +1,194 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    color: #1f2933;
+    line-height: 1.7;
+}
+
+/* ================= HEADER / NAVBAR ================= */
+header,
+.navbar {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2,
+.navbar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ================= SECTION ================= */
+.about {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    border-radius: 24px;
+    padding: 60px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= FOTO PROFIL ================= */
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 18px; /* TIDAK BULAT */
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= CONTENT ================= */
+.content {
+    flex: 2;
+}
+
+/* ================= JUDUL ================= */
+.content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= PARAGRAF ================= */
+.content p {
+    font-size: 17px;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+/* ================= BUTTON AREA ================= */
+.buttons {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px; /* JARAK ANTAR LINK */
+    align-items: center;
+}
+
+/* ================= BUTTON BASE ================= */
+.btn {
+    padding: 13px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.35s ease;
+}
+
+/* ================= CV BUTTON ================= */
+.btn.cv {
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.btn.cv:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.6);
+}
+
+/* ================= INSTAGRAM BUTTON ================= */
+.btn.ig {
+    background: linear-gradient(135deg, #ec4899, #f97316);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+}
+
+.btn.ig:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.6);
+}
+
+/* ================= YOUTUBE ================= */
+iframe {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 22px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image img {
+        max-width: 280px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    iframe {
+        height: 240px;
+    }
+}
