@@ -64,25 +64,25 @@ function updateRecommendation(mood){
     if(mood === "happy"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>The How of Happiness</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/AxM758IkMHg"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/A7Pt8R2Fx2Q"></iframe>`;
     }
 
     if(mood === "calm"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>Atomic Habits</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/69ZpOi5K4Mo"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/E14rVsVJk0M"></iframe>`;
     }
 
     if(mood === "sad"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>Anak Kos Dodol</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/ioGwyBZwWVo"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/6Mtj-ZdxfU8"></iframe>`;
     }
 
     if(mood === "stress"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>The Midnight Library</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/S30BAGHTaHY"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/embed/episode/7gSlCtQK5e1ucPLWKIm9hB"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/q5x1SNjRQwY"></iframe>`;
     }
 }
 
