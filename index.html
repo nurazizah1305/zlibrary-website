@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow.Lib</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+     <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+               <img src="logo.png"> Grow<span>Lib</span>
+            </div>
+
+     <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="bantuan.html">Bantuan</a>
+        <a href="login.html" class="login-btn">Login</a>
+     </nav>
+
+        </div>
+     </header>
+    
+    <!-- Hero -->
+     <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-box">
+            <h1>Grow Your Mind</h1>
+            <p>
+                Ruang literasi bagi remaja untuk mengenal diri lebih dalam, menemukan ketenangan, 
+                dan membangun kebiasaan positif dalam kehidupan sehari-hari. 
+            </p>
+
+            <!-- Search -->
+             <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari buku atau topik...">
+               <button onclick="searchBook()">Search</button> 
+             </div>
+            
+            <!-- Quotes -->
+             <div class="quote-bar">
+                <marquee id="quoteText"></marquee>
+             </div>
+
+        </div>
+     </section>
+
+            <!-- Mood Tracker -->
+             <section class="mood-section">
+                <div class="container">
+                <h2>Bagaimana Perasaanmu hari ini</h2>
+
+                <div class="mood-grid">
+
+                    <div class="mood-item">
+                       <button onclick="setMood('happy')">😊</button>
+                       <p>Happy</p>
+                    </div>
+
+                    <div class="mood-item">
+                        <button onclick="setMood('calm')">😌</button>
+                        <p>Calm</p>
+                    </div>
+
+                    <div class="mood-item">
+                        <button onclick="setMood('sad')">😔</button>
+                        <p>Sad</p>
+                    </div>
+
+                    <div class="mood-item">
+                        <button onclick="setMood('stress')">😣</button>
+                        <p>Stress</p>
+                    </div>
+                     
+                </div>
+                </div>
+             </section>
+            
+            <!-- Recommendation -->
+             <section class="recommendation">
+                <div class="container rec-grid">
+
+                    <div class="rec-card" id="bookRec">
+                        <h3>📚 Bacaan</h3>
+                        <p>Pilih mood terlebih dahulu</p>
+                    </div>
+
+                    <div class="rec-card" id="musicRec">
+                        <h3>🎧 Musik</h3>
+                        <p>Pilih mood terlebih dahulu</p>
+                    </div>
+
+                    <div class="rec-card" id="podcastRec">
+                        <h3>🎙️ Podcast</h3>
+                        <p>Pilih mood terlebih dahulu</p>
+                    </div>
+
+                </div>
+             </section>
+
+
+     <!-- Fitur -->
+      <section class="fitur">
+        <div class="fitur-container">
+
+            <h2>Ruang untuk Memahami Dirimu</h2>
+
+            <p class="fitur-desc">
+                Grow.Lib hadir sebagai ruang literasi bagi remaja untuk mengenal diri lebih dalam melalui bacaan, refleksi diri, 
+                dan kebiasaan positif yang mendukung pertumbuhan pribadi.
+            </p>
+
+        <div class="fitur-grid">
+
+            <div class="fitur-card">
+                <h3>📚 Literasi</h3>
+                <p>
+                    Temukan berbagai artikel dan rekomendasi buku yang informatif, mudah dipahami, 
+                    dan relevan untuk menemani remaja dalam mengenal diri serta menghadapi berbagai dinamika kehidupan.
+                </p>
+            </div>
+
+            <div class="fitur-card">
+                <h3>🧠 Refleksi Diri</h3>
+                <p>
+                   Tuliskan refleksi harian dan kenali perasaanmu
+                   untuk memahami dirimu dengan lebih baik. 
+                </p>
+            </div>
+
+            <div class="fitur-card">
+                <h3>🌱 Kebiasaan Positif</h3>
+                <p>
+                   Bangun kebiasaan kecil yang membantu 
+                   perkembangan diri setiap hari. 
+                </p>
+            </div>
+
+        </div>
+
+        </div>
+      </section>
+    
+    <!-- EVENT BERLANGSUNG -->
+     <section class="event-modern">
+        <div class="container event-modern-container">
+
+        <!-- GAMBAR -->
+        <div class="event-image">
+            <img src="event.jpg">
+        </div>
+
+        <!-- KONTEN -->
+        <div class="event-content">
+
+            <span class="event-status">● Sedang Berlangsung</span>
+
+            <h2 id="liveTitle">Breathing Session</h2>
+
+            <p id="liveDesc">
+                Luangkan waktu sejenak untuk menenangkan pikiran dan mengatur napas.
+            </p>
+
+            <div class="event-detail">
+                <span id="liveTime">19:00 WIB</span>
+                <span id="eventClock">00:00:00</span>
+            </div>
+
+            <button class="event-btn">Ikuti Event</button>
+
+        </div>
+
+    </div>
+</section>
+
+    <!-- EVENT SECTION -->
+     <section class="event-section">
+        <div class="container">
+
+        <h2 class="event-title">Upcoming Events</h2>
+
+        <!-- SLIDER -->
+        <div class="event-slider">
+            <div class="event-track">
+            
+            </div>
+             
+        </div>
+    </section>
+
+        <!-- TentangAdmin -->
+         <section class="about-contact"> 
+            <div class="about-contact-container"> 
+            <div class="about-contact-grid">
+
+                <div class="about-card">
+                    <h3>About Admin</h3>
+                    <p>
+                        Grow.Lib dirancang oleh mahasiswi program studi
+                        Perpustakaan dan Sains Informasi. 
+                        Grow.Lib hadir sebagai ruang belajar dan refleksi yang diharapkan 
+                        dapat membantu remaja memahami diri mereka dengan lebih baik melalui
+                        bacaan yang positif dan bermakna.
+                    </p>
+                    <a href="profil.html">Lihat Profil</a>
+                </div>
+            
+            <div class="contact-card">
+                <h3>💬 Contact & Feedback</h3>
+                <p>
+                    Kirim pesan atau feedback untuk Grow.Lib.
+                </p>
+            
+            <form class="contact-form">
+                <input type="text" name="nama" placeholder="Nama kamu" required> 
+                <input type="email" name="email" placeholder="Email kamu" required> 
+                <textarea name="pesan" rows="4" 
+                placeholder="Tulis pesan atau feedback..." required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+                </div>
+            </div>
+
+            </div>
+         </section>
+
+         <script src="script.js"></script>
+
+         <footer class="footer-bottom">
+            <p>© 2026 Grow.Lib</p>
+         </footer>
+    
+</body>
+</html>
