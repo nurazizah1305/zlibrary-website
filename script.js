@@ -64,25 +64,25 @@ function updateRecommendation(mood){
     if(mood === "happy"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>The How of Happiness</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/AxM758IkMHg"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/A7Pt8R2Fx2Q"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
     }
 
     if(mood === "calm"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>Atomic Habits</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/69ZpOi5K4Mo"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/E14rVsVJk0M"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
     }
 
     if(mood === "sad"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>Anak Kos Dodol</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/ioGwyBZwWVo"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/6Mtj-ZdxfU8"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/episode/5fiOjObTm5xIfsyoK1iNzI?si=d3bf75e14b0a4d1e"></iframe>`;
     }
 
     if(mood === "stress"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p>The Midnight Library</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><iframe src="https://www.youtube.com/embed/S30BAGHTaHY"></iframe>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://www.youtube.com/embed/q5x1SNjRQwY"></iframe>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><iframe src="https://open.spotify.com/embed/episode/7gSlCtQK5e1ucPLWKIm9hB"></iframe>`;
     }
 }
 
@@ -250,3 +250,49 @@ document.querySelector(".signup-form")?.addEventListener("submit", function(e){
     alert("Berhasil daftar! Silakan login 🌿");
     window.location.href = "login.html";
 });
+
+let currentFilter = "all";
+
+function getCurrentWeek(){
+    let week = Math.floor(new Date().getDate() / 7);
+    return week % weeklyEvents.length;
+}
+
+function filterEvent(cat){
+    currentFilter = cat;
+
+    document.querySelectorAll(".filter-btns button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    event.target.classList.add("active");
+
+    renderFullEventList();
+}
+
+function openDetail(index){
+    const event = weeklyEvents[getCurrentWeek()][index];
+
+    document.getElementById("modalTitle").innerText = event.title;
+    document.getElementById("modalDesc").innerText = event.desc;
+    document.getElementById("modalTime").innerText = event.time + " WIB";
+    document.getElementById("modalImage").src = `event${index+1}.jpg`;
+
+    const modal = new bootstrap.Modal(document.getElementById('eventModal'));
+    modal.show();
+
+    document.getElementById("joinBtn").onclick = function(){
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        if(!users){
+            alert("Login dulu ya 🌿");
+            window.location.href = "login.html";
+            return;
+        }
+
+        alert("Berhasil join event ✨");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", renderFullEventList);
+
+
