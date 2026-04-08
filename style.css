@@ -608,3 +608,91 @@ body.event-page .event-btn {
 body.event-page .event-btn:hover {
     background: #27ae60;
 }
+
+/* ======================= */
+/* ABOUT & CONTACT SECTION */
+/* ======================= */
+
+.about-contact-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: nowrap; 
+}
+
+/* CARD */
+.about-card,
+.contact-card {
+    width: 48%; 
+    background: #d9efe4;
+    padding: 30px;
+    border-radius: 16px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
+.about-card h3,
+.contact-card h3 {
+    color: #1f7a5c;
+    margin-bottom: 10px;
+}
+
+.about-card p,
+.contact-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* LINK */
+.about-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1f7a5c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* BUTTON */
+.contact-form button {
+    margin-top: 12px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #1f7a5c;
+    color: white;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #17664c;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .about-contact-grid {
+        flex-direction: column;
+    }
+
+    .about-card,
+    .contact-card {
+        width: 100%;
+    }
+}
