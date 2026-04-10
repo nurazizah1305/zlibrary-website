@@ -41,25 +41,25 @@ function updateRecommendation(mood){
     if(mood === "happy"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p class='fw-bold text-success'>The How of Happiness</p><p class='small text-muted'>Pelajari cara ilmiah untuk meningkatkan kebahagiaanmu.</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/AxM758IkMHg" allowfullscreen></iframe></div>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://open.spotify.com/embed/show/39C8U958IkMHg" allowfullscreen></iframe></div>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/pHK2UxwfaL0" allowfullscreen></iframe></div>`;
     }
 
     if(mood === "calm"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p class='fw-bold text-success'>Atomic Habits</p><p class='small text-muted'>Perubahan kecil yang memberikan hasil luar biasa.</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/69ZpOi5K4Mo" allowfullscreen></iframe></div>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://open.spotify.com/embed/show/69ZpOi5K4Mo" allowfullscreen></iframe></div>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/dmFKPhjoRrE" allowfullscreen></iframe></div>`;
     }
 
     if(mood === "sad"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p class='fw-bold text-success'>Anak Kos Dodol</p><p class='small text-muted'>Cerita kocak yang pasti bikin kamu senyum lagi.</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/ioGwyBZwWVo" allowfullscreen></iframe></div>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://open.spotify.com/embed/show/ioGwyBZwWVo" allowfullscreen></iframe></div>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/FIXQQ7X7tZE" allowfullscreen></iframe></div>`;
     }
 
     if(mood === "stress"){
         book.innerHTML = "<h3>📚 Bacaan</h3><p class='fw-bold text-success'>The Midnight Library</p><p class='small text-muted'>Menjelajahi ribuan kehidupan untuk menemukan arti hidup.</p>";
         music.innerHTML = `<h3>🎧 Musik</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/S30BAGHTaHY" allowfullscreen></iframe></div>`;
-        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://open.spotify.com/embed/show/S30BAGHTaHY" allowfullscreen></iframe></div>`;
+        podcast.innerHTML = `<h3>🎙️ Podcast</h3><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/q5x1SNjRQwY" allowfullscreen></iframe></div>`;
     }
 }
 
