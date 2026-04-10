@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="koleksi-page">
+
+    <header class="navbar-section shadow-sm sticky-top">
+        <div class="top-bar py-2 border-bottom d-none d-md-block">
+            <div class="container d-flex justify-content-between align-items-center">
+                <p class="small m-0">Literary for Mental Health & Growth</p>
+                <div class="top-links small">
+                    <a href="ilustrasi.html" class="top-link-item text-decoration-none">Ilustrasi</a>
+                    <a href="komunitas.html" class="top-link-item text-decoration-none active">Komunitas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header container py-3">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-6">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <i class="fas fa-seedling"></i> Grow<span>Lib</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="input-group search-container-editorial">
+                        <input type="text" class="form-control" id="searchKoleksi" placeholder="Cari judul..." onkeyup="searchFunction()">
+                        <button class="btn btn-editorial-search" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 text-end">
+                    <button class="btn btn-login-editorial" data-bs-toggle="modal" data-bs-target="#authModal">
+                        Login / Register
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bottom border-top d-none d-lg-block">
+            <div class="container d-flex align-items-center py-2">
+                <nav class="main-menu">
+                    <a href="index.html">Home</a>
+                    <a href="event.html">Event</a>
+                    <a href="koleksi.html" class="active">Koleksi</a>
+                     <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Layanan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownLayanan">
+                        <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
+                        <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
+                        <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
+                        <li><a class="dropdown-item" href="playlist.html">Playlist</a></li> <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
+                    </ul>
+                </div>
+                  
+                    <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bantuan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
+                        <li><a class="dropdown-item" href="panduan.html">Panduan Penggunaan</a></li>
+                        <li><a class="dropdown-item" href="faq.html">Tanya Jawab (FAQ)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-card border-0">
+                <div class="modal-body p-5">
+                    <h2 class="text-center mb-4">Welcome Back</h2>
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab">
+                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#login">Login</button></li>
+                        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#signup">Sign Up</button></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email Address">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">LOGIN</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <input type="text" class="form-control mb-3 editorial-input" placeholder="Full Name">
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">REGISTER</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <section class="hero-koleksi-v2">
+    <div class="overlay-hero"></div>
+    <div class="container hero-content-v2 text-center text-white">
+        <span class="badge-sage mb-3 animate__animated animate__fadeInDown">DIGITAL LIBRARY</span>
+        <h1 class="editorial-title display-3 fw-bold">GrowMind Space</h1>
+        <p class="lead mb-4">Temukan ketenangan di antara barisan kata dan ilustrasi yang bermakna.</p>
+        
+        <div class="category-filter-box p-2 bg-white rounded-pill shadow-lg d-inline-flex">
+            <button class="btn btn-filter active">Semua</button>
+            <button class="btn btn-filter">Self Dev</button>
+            <button class="btn btn-filter">Novel</button>
+            <button class="btn btn-filter">Artikel</button>
+            <button class="btn btn-filter">Komik</button>
+        </div>
+    </div>
+</section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title-editorial mb-5">
+                <h2 class="h3 fw-bold">Self Improvement terbaik yang membantumu bertumbuh.</h2>
+                <div class="line-green"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="buku1.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Atomic Habits</h6>
+                        <a href="pdf1.pdf" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="buku2.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Ikigai</h6>
+                        <a href="pdf2.pdf" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="buku3.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Filosofi Teras</h6>
+                        <a href="pdf3.pdf" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="buku4.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">The 5 am Club</h6>
+                        <a href="pdf4.pdf" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider container">
+
+    <section class="py-5">
+        <div class="container text-end">
+            <div class="section-title-editorial mb-5">
+                <h2 class="h3 fw-bold">Novel terbaik yang membantumu bertumbuh.</h2>
+                <div class="line-green ms-auto"></div>
+            </div>
+            <div class="row g-4 text-start">
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="novel1.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">The Midnight Library</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="novel2.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Jika Kucing Lenyap Dari Dunia</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="novel3.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Keajaiban Toko Kelontong Namiya</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="novel4.jpg" class="img-fluid rounded"></div>
+                        <h6 class="fw-bold small-title">Dallergut Toko Penjual Mimpi</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider container">
+
+    <section class="py-5 bg-white-clean">
+        <div class="container">
+            <div class="section-title-editorial mb-5">
+                <h2 class="h3 fw-bold">Artikel terbaik yang membantumu bertumbuh.</h2>
+                <div class="line-green"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="article-card-large p-4 border shadow-custom bg-white">
+                        <span class="badge-sage mb-2">MENTAL HEALTH</span>
+                        <h4 class="h5">Mengelola Overthinking</h4>
+                        <p class="text-muted small">Cara meredakan pikiran berisik sebelum tidur.</p>
+                        <a href="#" class="btn-link small">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="article-card-large p-4 border shadow-custom bg-white">
+                        <span class="badge-sage mb-2">SELF CARE</span>
+                        <h4 class="h5">Pentingnya Batasan Diri</h4>
+                        <p class="text-muted small">Belajar berkata tidak demi kesehatan mental.</p>
+                        <a href="#" class="btn-link small">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="article-card-large p-4 border shadow-custom bg-white">
+                        <span class="badge-sage mb-2">GROWTH</span>
+                        <h4 class="h5">Membangun Habit Positif</h4>
+                        <p class="text-muted small">Langkah kecil untuk perubahan besar.</p>
+                        <a href="#" class="btn-link small">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="article-card-large p-4 border shadow-custom bg-white">
+                        <span class="badge-sage mb-2">REFLEKSI</span>
+                        <h4 class="h5">Seni Mengenal Diri</h4>
+                        <p class="text-muted small">Menemukan jati diri di usia remaja.</p>
+                        <a href="#" class="btn-link small">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider container">
+
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title-editorial mb-5">
+                <h2 class="h3 fw-bold">Komik terbaik yang membantumu bertumbuh.</h2>
+                <div class="line-green"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="komik1.jpg" class="img-fluid rounded border"></div>
+                        <h6 class="fw-bold small-title">Pupus Putus Sekolah</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="komik2.jpg" class="img-fluid rounded border"></div>
+                        <h6 class="fw-bold small-title">Jumbo</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="komik3.jpg" class="img-fluid rounded border"></div>
+                        <h6 class="fw-bold small-title">Si Juki</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card-editorial text-center">
+                        <div class="book-img-container mb-3"><img src="komik4.jpg" class="img-fluid rounded border"></div>
+                        <h6 class="fw-bold small-title">Miiko</h6>
+                        <a href="#" class="btn btn-green-editorial btn-sm w-100">BACA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider container">
+
+    <section class="py-5 bg-sage-mist">
+        <div class="container">
+            <div class="section-title-editorial mb-5 text-center">
+                <h2 class="h3 fw-bold">Your Personal Space</h2>
+                <p class="text-muted">Pantau progress bacamu dan ulasan yang telah kamu buat.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="p-4 bg-white border h-100 shadow-custom">
+                        <h5 class="fw-bold mb-4"><i class="fas fa-history me-2"></i> Riwayat Bacaan</h5>
+                        <div class="d-flex align-items-center mb-3 border-bottom pb-2">
+                            <img src="buku1.jpg" style="width: 40px; height: 60px; object-fit: cover;" class="rounded me-3">
+                            <div class="flex-grow-1">
+                                <h6 class="m-0 fw-bold small">Atomic Habits</h6>
+                                <div class="progress mt-1" style="height: 5px;"><div class="progress-bar bg-success" style="width: 75%"></div></div>
+                            </div>
+                            <span class="small text-muted ms-3">75%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="p-4 bg-white border h-100 shadow-custom">
+                        <h5 class="fw-bold mb-4"><i class="fas fa-pen-fancy me-2"></i> Ulasan Terbaru</h5>
+                        <div class="review-item mb-3 p-3 bg-light rounded">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold small">"Sangat membantu!"</span>
+                                <span class="text-warning small">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="m-0 x-small text-muted italic">"Buku ini mengubah caraku bangun pagi..." - Sarah</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bottom py-5 border-top text-center">
+        <div class="logo mb-2">Grow<span>Lib</span></div>
+        <p class="text-muted small m-0">© 2026 Grow.Lib — Built for Mental Growth.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow.Lib | Ruang Literasi Remaja</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar-section shadow-sm sticky-top">
+        <div class="top-bar py-2 border-bottom d-none d-md-block">
+            <div class="container d-flex justify-content-between align-items-center">
+                <p class="small m-0">Literary for Mental Health & Growth</p>
+                <div class="top-links small">
+                    <a href="ilustrasi.html" class="top-link-item text-decoration-none">Ilustrasi</a>
+                    <a href="komunitas.html" class="top-link-item text-decoration-none active">Komunitas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header container py-3">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-6">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <i class="fas fa-seedling"></i> Grow<span>Lib</span>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="input-group search-container-editorial">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Cari buku atau topik...">
+                        <span class="input-group-text bg-white border-0 px-3">
+                            <select class="form-select border-0 bg-transparent py-0" style="width: auto;">
+                                <option>All category</option>
+                            </select>
+                        </span>
+                        <button class="btn btn-editorial-search" type="button" onclick="searchBook()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6 text-end">
+                    <button class="btn btn-login-editorial" data-bs-toggle="modal" data-bs-target="#authModal">
+                        Login / Register
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bottom border-top d-none d-lg-block">
+            <div class="container d-flex align-items-center py-2">
+
+                <nav class="main-menu d-flex align-items-center">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="event.html">Event</a>
+                    <a href="koleksi.html">Koleksi</a>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
+                            Layanan
+                        </a>
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
+                            <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
+                            <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
+                            <li><a class="dropdown-item" href="playlist.html">Playlist</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bantuan
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
+                            <li><a class="dropdown-item" href="panduan.html">Panduan Penggunaan</a></li>
+                            <li><a class="dropdown-item" href="faq.html">Tanya Jawab (FAQ)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-card border-0">
+                <div class="modal-body p-5">
+                    <h2 class="text-center mb-4">Welcome Back</h2>
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#login">Login</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#signup">Sign Up</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email Address">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">LOGIN</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <input type="text" class="form-control mb-3 editorial-input" placeholder="Full Name">
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">REGISTER</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-editorial" id="home">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge-sage mb-3 d-inline-block text-uppercase">EST. 2026</span>
+                <h1 class="editorial-title">GROW YOUR<br>MIND & SOUL</h1>
+                <p>Ruang literasi bagi remaja untuk mengenal diri lebih dalam, menemukan ketenangan, dan membangun kebiasaan positif dalam kehidupan sehari-hari.</p>
+                <div class="quote-bar mt-4">
+                    <marquee id="quoteText">"Reading is to the mind what exercise is to the body."</marquee>
+                </div>
+            </div>
+            <div class="hero-image-box">
+                <img src="background.gif" alt="Aesthetic" class="hero-gif">
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider">
+
+    <section class="mood-section bg-white-clean py-5" id="layanan">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="h3 fw-bold">Bagaimana Perasaanmu Hari Ini?</h2>
+                <p class="text-muted small">Pilih mood untuk mendapatkan rekomendasi healing.</p>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-2">
+                    <div class="mood-card-mini" onclick="setMood('happy')">
+                        <div class="mood-emoji">😊</div>
+                        <span>Happy</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="mood-card-mini" onclick="setMood('calm')">
+                        <div class="mood-emoji">😌</div>
+                        <span>Calm</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="mood-card-mini" onclick="setMood('sad')">
+                        <div class="mood-emoji">😔</div>
+                        <span>Sad</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="mood-card-mini" onclick="setMood('stress')">
+                        <div class="mood-emoji">😣</div>
+                        <span>Stress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommendationArea" class="bg-sage-mist py-5 d-none">
+        <div class="container">
+            <div class="rec-box-editorial p-4 p-md-5">
+                <h3 class="text-center mb-4 h4">Rekomendasi Healing Untukmu</h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="rec-item-card h-100" id="bookRec"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rec-item-card h-100" id="musicRec"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rec-item-card h-100" id="podcastRec"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider">
+
+    <section class="fitur-section bg-white-clean py-5">
+        <div class="container py-5 text-center">
+            <h2 class="mb-4">Ruang untuk Memahami Dirimu</h2>
+            <p class="text-muted mx-auto mb-5" style="max-width: 800px;">
+                Grow.Lib hadir sebagai ruang literasi bagi remaja untuk mengenal diri melalui bacaan dan refleksi diri.
+            </p>
+            <div class="row g-4 text-start">
+                <div class="col-md-4">
+                    <div class="fitur-card p-4 border h-100">
+                        <h3 class="h5 mb-3">📚 Literasi</h3>
+                        <p class="small m-0">Temukan berbagai artikel dan rekomendasi buku yang relevan untuk menemani pertumbuhanmu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fitur-card p-4 border h-100">
+                        <h3 class="h5 mb-3">🧠 Refleksi Diri</h3>
+                        <p class="small m-0">Tuliskan refleksi harian dan kenali perasaanmu untuk memahami dirimu dengan lebih baik.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fitur-card p-4 border h-100">
+                        <h3 class="h5 mb-3">🌱 Kebiasaan Positif</h3>
+                        <p class="small m-0">Bangun kebiasaan kecil yang membantu perkembangan diri setiap hari secara konsisten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="hr-divider">
+
+    <section class="game-section py-5 bg-white-clean">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                
+                <div class="col-md-6 order-2 order-md-1">
+                    <div class="game-visual-box shadow-custom p-4 bg-white text-center position-relative">
+                        <div class="garden-display mb-4 position-relative" style="height: 350px; background: #fdfdfd; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; border-radius: 10px; border: 1px solid #eee;">
+                            <div id="flower" style="font-size: 50px; transition: all 0.5s ease; cursor: default;">🌱</div>
+                            
+                            <div id="waterDrop" class="position-absolute d-none" style="top: 0; font-size: 24px;">💧</div>
+                        </div>
+
+                        <div class="game-controls text-center mt-3">
+                            <button class="btn btn-outline-sage btn-sm" onclick="waterPlant()">
+                                <i class="fas fa-tint"></i> Siram Tanaman
+                            </button>
+                            <p class="small text-muted mt-2" id="gardenStatus">Tanamanmu butuh air untuk tumbuh!</p>
+                        </div>
+                        
+                        <div class="game-stats d-flex justify-content-around mt-3">
+                            <div class="stat-item">
+                                <span class="d-block fw-bold text-sage">Level 5</span>
+                                <small class="text-muted">Master Gardener</small>
+                            </div>
+                            <div class="stat-item">
+                                <span class="d-block fw-bold text-sage">12</span>
+                                <small class="text-muted">Bunga Mekar</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 order-1 order-md-2">
+                    
+                    <h2 class="editorial-title mb-4">Garden of Mind:<br>Rawat Jiwa, Tumbuhkan Bunga</h2>
+                    <p class="mb-4">
+                        Di <strong>Garden of Mind</strong>, setiap aktivitas positif yang kamu lakukan di Grow.Lib—seperti membaca buku atau menulis refleksi—akan memberikan "nutrisi" untuk bunga digitalmu.
+                    </p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-sage me-2"></i> <strong>Selesaikan Quest:</strong> Baca 1 artikel untuk menyiram tanaman.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-sage me-2"></i> <strong>Koleksi Benih:</strong> Dapatkan benih bunga langka setiap minggu.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-sage me-2"></i> <strong>Lihat Kemajuan:</strong> Saksikan tamanmu berubah dari gersang menjadi penuh warna.</li>
+                    </ul>
+                    <a href="garden.html" class="btn btn-green-editorial px-5">Mulai Menanam <i class="fas fa-leaf ms-2"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-sage-mist py-5" id="bantuan">
+        <div class="container my-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="p-5 border bg-white h-100 shadow-custom">
+                        <h3 class="mb-4">About Admin</h3>
+                        <p class="small">Grow.Lib dirancang oleh mahasiswi program studi Perpustakaan dan Sains Informasi sebagai ruang belajar dan refleksi.</p>
+                        <a href="profil.html" class="btn-link mt-3 d-inline-block">Lihat Profil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-5 border bg-white h-100 shadow-custom">
+                        <h3 class="mb-4">Contact & Feedback</h3>
+                        <form class="contact-form">
+                            <input type="text" class="form-control mb-3 editorial-input" placeholder="Nama kamu">
+                            <textarea class="form-control mb-3 editorial-input" rows="3" placeholder="Pesan atau feedback..."></textarea>
+                            <button type="submit" class="btn btn-green-editorial w-100">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bottom py-5 border-top bg-white-clean">
+        <div class="container text-center">
+            <div class="logo mb-3 d-block">Grow<span>Lib</span></div>
+            <p class="text-muted small m-0">© 2026 Grow.Lib — Built for Mental Growth.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

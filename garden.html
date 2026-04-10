@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden of Mind - Grow.Lib</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS KHUSUS HALAMAN GARDEN */
+        body { background-color: #f8faf8; }
+        
+        .garden-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(64, 81, 59, 0.05);
+            overflow: hidden;
+        }
+
+        .terrarium {
+            background: linear-gradient(to bottom, #eef4ee 0%, #fdfdfd 100%);
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            border-bottom: 8px solid #8b7355; /* Warna Tanah */
+            position: relative;
+        }
+
+        #flower-plant {
+            font-size: 60px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+            margin-bottom: -5px; /* Biar nempel ke tanah */
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
+        }
+
+        .water-animation {
+            position: absolute;
+            top: 20px;
+            font-size: 24px;
+            opacity: 0;
+        }
+
+        @keyframes dropWater {
+            0% { transform: translateY(0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(300px); opacity: 0; }
+        }
+
+        .stat-box {
+            background: #f4f7f4;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e2ebe2;
+        }
+
+        .quest-card {
+            border: 1px solid #eee;
+            border-left: 4px solid #40513B;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .quest-card:hover {
+            transform: translateX(5px);
+            background: #fdfdfd;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar-section shadow-sm sticky-top bg-white">
+        <div class="main-header container py-3">
+            <div class="row align-items-center">
+                <div class="col-6 col-lg-3">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <i class="fas fa-seedling"></i> Grow<span>Lib</span>
+                    </a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <nav class="main-menu d-flex justify-content-center align-items-center" style="gap: 5px;">
+                        <a href="index.html" style="padding: 8px 12px;">Home</a>
+                        <a href="event.html" style="padding: 8px 12px;">Event</a>
+                        <a href="koleksi.html" style="padding: 8px 12px;">Koleksi</a>
+                        
+                        <div class="dropdown" style="margin: 0; padding: 0;">
+                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" style="padding: 8px 12px;">Layanan</a>
+                            <ul class="dropdown-menu border-0 shadow-sm mt-2">
+                                <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
+                                <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-6 col-lg-3 text-end">
+                    <span class="badge-sage fw-normal"><i class="fas fa-leaf"></i> Garden Mode</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <div class="text-center mb-5">
+                <h1 class="editorial-title">Garden of Mind</h1>
+                <p class="text-muted">Rawat pikiranmu, biarkan jiwamu mekar seperti bunga ini.</p>
+            </div>
+
+            <div class="row g-5">
+                
+                <div class="col-lg-7">
+                    <div class="garden-container border">
+                        <div class="terrarium">
+                            <div id="water-drop" class="water-animation">💧</div>
+                            <div id="flower-plant">🌱</div>
+                        </div>
+                        
+                        <div class="p-4 bg-white text-center">
+                            <h3 class="h5 fw-bold text-sage mb-3" id="growth-status">Tunas Baru</h3>
+                            <div class="progress mb-3" style="height: 10px;">
+                                <div id="growth-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%; background-color: #40513B !important;"></div>
+                            </div>
+                            
+                            <button id="btn-water" class="btn btn-green-editorial px-5 py-2" onclick="waterPlant()" disabled>
+                                <i class="fas fa-tint me-2"></i> Siram Tanaman (Butuh 10 💧)
+                            </button>
+                            <p class="small text-danger mt-2 d-none" id="warning-text">Air tidak cukup! Selesaikan misi dulu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <i class="fas fa-droplet text-info mb-2 fs-4"></i>
+                                <h4 class="fw-bold mb-0" id="water-balance">0</h4>
+                                <small class="text-muted">Simpanan Air</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <i class="fas fa-sun text-warning mb-2 fs-4"></i>
+                                <h4 class="fw-bold mb-0">Level 2</h4>
+                                <small class="text-muted">Gardener</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="h5 fw-bold mb-3"><i class="fas fa-clipboard-list me-2"></i> Misi Harian</h4>
+                    <p class="small text-muted mb-3">Selesaikan misi literasi untuk mendapatkan air.</p>
+                    
+                    <div class="d-flex flex-column gap-3">
+                        
+                        <div class="quest-card bg-white p-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1 fw-bold">Baca 1 Artikel</h6>
+                                <small class="text-muted">+10 Tetes Air 💧</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-sage" onclick="claimWater(this, 10)">Klaim</button>
+                        </div>
+
+                        <div class="quest-card bg-white p-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1 fw-bold">Tulis Jurnal Hari Ini</h6>
+                                <small class="text-muted">+20 Tetes Air 💧</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-sage" onclick="claimWater(this, 20)">Klaim</button>
+                        </div>
+
+                        <div class="quest-card bg-white p-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1 fw-bold">Dengarkan Playlist Tenang</h6>
+                                <small class="text-muted">+10 Tetes Air 💧</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-sage" onclick="claimWater(this, 10)">Klaim</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Variabel Game
+        let myWater = 0;
+        let currentStage = 0;
+        
+        // Array Pertumbuhan Bunga
+        const plantStages = [
+            { emoji: "🌱", name: "Tunas Baru" },
+            { emoji: "🌿", name: "Daun Muda" },
+            { emoji: "🪴", name: "Tanaman Remaja" },
+            { emoji: "🌷", name: "Kuncup Bunga" },
+            { emoji: "🌸", name: "Bunga Mekar" }
+        ];
+
+        // Fungsi Klaim Misi
+        function claimWater(btnElement, amount) {
+            myWater += amount;
+            updateUI();
+            
+            // Ubah tombol jadi disabled setelah diklaim
+            btnElement.innerHTML = '<i class="fas fa-check"></i> Selesai';
+            btnElement.classList.replace('btn-outline-sage', 'btn-secondary');
+            btnElement.disabled = true;
+        }
+
+        // Fungsi Menyiram Tanaman
+        function waterPlant() {
+            if (myWater >= 10) {
+                if (currentStage < plantStages.length - 1) {
+                    myWater -= 10;
+                    
+                    // 1. Jalankan Animasi Air
+                    const drop = document.getElementById('water-drop');
+                    drop.style.animation = 'none'; // Reset
+                    setTimeout(() => { drop.style.animation = 'dropWater 1s forwards'; }, 10);
+
+                    // 2. Tambah Stage & Update Tampilan setelah air jatuh (1 detik)
+                    setTimeout(() => {
+                        currentStage++;
+                        const plant = document.getElementById('flower-plant');
+                        
+                        // Efek membesar saat tumbuh
+                        let currentSize = parseInt(window.getComputedStyle(plant).fontSize);
+                        plant.style.fontSize = (currentSize + 20) + "px";
+                        plant.innerHTML = plantStages[currentStage].emoji;
+                        
+                        updateUI();
+
+                        // Cek jika sudah mekar sempurna
+                        if (currentStage === plantStages.length - 1) {
+                            document.getElementById('growth-status').innerHTML = "✨ Bunga Mekar Sempurna! ✨";
+                            document.getElementById('growth-status').classList.add('text-success');
+                            document.getElementById('btn-water').innerHTML = '<i class="fas fa-box-archive"></i> Simpan ke Koleksi';
+                        }
+                    }, 800);
+                    
+                } else {
+                    alert("Bungamu sudah mekar sempurna! Besok kita tanam benih baru ya.");
+                }
+            } else {
+                document.getElementById('warning-text').classList.remove('d-none');
+                setTimeout(() => { document.getElementById('warning-text').classList.add('d-none'); }, 3000);
+            }
+            updateUI();
+        }
+
+        // Fungsi Update Layar
+        function updateUI() {
+            document.getElementById('water-balance').innerText = myWater;
+            
+            // Atur nama tanaman
+            if (currentStage < plantStages.length - 1) {
+                document.getElementById('growth-status').innerText = plantStages[currentStage].name;
+            }
+
+            // Atur Progress bar
+            let progressPercentage = (currentStage / (plantStages.length - 1)) * 100;
+            document.getElementById('growth-bar').style.width = progressPercentage + '%';
+
+            // Aktifkan/Nonaktifkan tombol siram
+            const waterBtn = document.getElementById('btn-water');
+            if (myWater >= 10 && currentStage < plantStages.length - 1) {
+                waterBtn.disabled = false;
+            } else if (currentStage < plantStages.length - 1) {
+                waterBtn.disabled = true;
+            }
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

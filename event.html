@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="event-page">
+
+    <header class="navbar-section shadow-sm sticky-top">
+        <div class="top-bar py-2 border-bottom d-none d-md-block">
+            <div class="container d-flex justify-content-between align-items-center">
+                <p class="small m-0">Literary for Mental Health & Growth</p>
+                <div class="top-links small">
+                    <a href="ilustrasi.html" class="top-link-item text-decoration-none">Ilustrasi</a>
+                    <a href="komunitas.html" class="top-link-item text-decoration-none active">Komunitas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header container py-3">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-6">
+                    <a href="index.html" class="logo text-decoration-none">
+                        <i class="fas fa-seedling"></i> Grow<span>Lib</span>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="input-group search-container-editorial">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Cari event atau topik...">
+                        <button class="btn btn-editorial-search" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6 text-end">
+                    <button class="btn btn-login-editorial" data-bs-toggle="modal" data-bs-target="#authModal">
+                        Login / Register
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-bottom border-top d-none d-lg-block">
+            <div class="container d-flex align-items-center py-2">
+                <nav class="main-menu">
+                    <a href="index.html">Home</a>
+                    <a href="event.html" class="active">Event</a>
+                    <a href="koleksi.html">Koleksi</a>
+                     <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Layanan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownLayanan">
+                        <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
+                        <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
+                        <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
+                        <li><a class="dropdown-item" href="playlist.html">Playlist</a></li> <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
+                    </ul>
+                </div>
+                  
+                    <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bantuan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
+                        <li><a class="dropdown-item" href="panduan.html">Panduan Penggunaan</a></li>
+                        <li><a class="dropdown-item" href="faq.html">Tanya Jawab (FAQ)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="event-hero-fullscreen">
+    <div class="hero-overlay"></div> <div class="container hero-content-wrapper">
+        <div class="hero-text-event text-center">
+            <h1 class="editorial-title text-white display-3">EVENTS &<br>ACTIVITIES</h1>
+            <p class="text-white-50 mx-auto mt-3" style="max-width: 600px;">Temukan sesi refleksi, healing, dan pengembangan diri untuk perjalanan mentalmu.</p>
+        </div>
+    
+            <div class="filter-wrapper mt-5">
+                <div class="filter-btns-editorial d-flex justify-content-center gap-2 flex-wrap">
+                    <button class="active" onclick="filterEvent('all')">All Events</button>
+                    <button onclick="filterEvent('HEALING')">Healing</button>
+                    <button onclick="filterEvent('LITERASI')">Literasi</button>
+                    <button onclick="filterEvent('RELAX')">Relax</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5 py-4">
+        <div class="row g-4">
+            <div class="col-md-4 event-item" data-category="HEALING">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event1.jpg" alt="Breathing" class="w-100">
+                        <div class="date-tag"><strong>15</strong><span>APR</span></div>
+                        <span class="cat-tag">HEALING</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Breathing Session</h3>
+                        <p class="small text-muted">Sesi latihan pernapasan untuk menenangkan pikiran dan tubuh.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 19.00 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> The Le Hu Garden</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Breathing%20Session" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-item" data-category="LITERASI">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event2.jpg" alt="Reading" class="w-100">
+                        <div class="date-tag"><strong>17</strong><span>APR</span></div>
+                        <span class="cat-tag">LITERASI</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Reading Session</h3>
+                        <p class="small text-muted">Kegiatan membaca bersama untuk meningkatkan fokus.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 20.00 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Rain Forest Cafe</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Reading%20Session" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-item" data-category="RELAX">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event3.jpg" alt="Music" class="w-100">
+                        <div class="date-tag"><strong>20</strong><span>APR</span></div>
+                        <span class="cat-tag">RELAX</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Calm Music Night</h3>
+                        <p class="small text-muted">Dengarkan musik santai meredakan pikiran lelah.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 21.00 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Calm%20Music Night" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-item" data-category="HEALING">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event4.jpg" alt="Gratitude" class="w-100">
+                        <div class="date-tag"><strong>22</strong><span>APR</span></div>
+                        <span class="cat-tag">HEALING</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Gratitude Time</h3>
+                        <p class="small text-muted">Luangkan waktu untuk menuliskan hal-hal yang kamu syukuri hari ini.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 07.00 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Gratitude%20Time" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-item" data-category="RELAX">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event5.jpg" alt="Detox" class="w-100">
+                        <div class="date-tag"><strong>24</strong><span>APR</span></div>
+                        <span class="cat-tag">RELAX</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Digital Detox</h3>
+                        <p class="small text-muted">Istirahat sejenak dari gadget untuk pikiran yang jenuh.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 20.30 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Taman Cadika Medan</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Digital%20Detox" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 event-item" data-category="LITERASI">
+                <div class="event-card-editorial">
+                    <div class="event-img-box">
+                        <img src="event6.jpg" alt="Journaling" class="w-100">
+                        <div class="date-tag"><strong>28</strong><span>APR</span></div>
+                        <span class="cat-tag">LITERASI</span>
+                    </div>
+                    <div class="event-body-editorial p-4">
+                        <h3>Journaling Night</h3>
+                        <p class="small text-muted">Tulis pikiran dan perasaanmu tanpa batas dalam sesi journaling.</p>
+                        <div class="event-meta-editorial small mb-3">
+                            <span class="me-2"><i class="far fa-clock"></i> 19.30 WIB</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                        </div>
+                        <a href="komunitas.html?status=joined&event=Journaling%20Night" class="btn btn-green-editorial w-100">JOIN EVENT</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer-bottom py-5 border-top bg-white-clean">
+        <div class="container text-center">
+            <div class="logo mb-3 d-block">Grow<span>Lib</span></div>
+            <p class="text-muted small m-0">© 2026 Grow.Lib — Built for Mental Growth.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-card border-0">
+                <div class="modal-body p-5">
+                    <h2 class="text-center mb-4">Welcome Back</h2>
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#login">Login</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#signup">Sign Up</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email Address">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">LOGIN</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <input type="text" class="form-control mb-3 editorial-input" placeholder="Full Name">
+                                <input type="email" class="form-control mb-3 editorial-input" placeholder="Email">
+                                <input type="password" class="form-control mb-4 editorial-input" placeholder="Password">
+                                <button type="submit" class="btn btn-green-editorial w-100 py-3">REGISTER</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

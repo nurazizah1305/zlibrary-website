@@ -1,0 +1,733 @@
+/* --- 1. SETTINGS & PALETTE --- */
+:root {
+    --sage-mist: #EDF1E4;        /* Background Utama */
+    --cream-white: #FDFDFB;      /* Background Card */
+    --sage-soft: #9DC08B;        /* Background Header */
+    --sage-primary: #609966;     /* Aksen & Hover */
+    --sage-deep: #40513B;        /* Judul & Top Bar */
+    --border-soft: #DDE2D5;      
+    --white: #FFFFFF;
+    --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--sage-mist);
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--sage-deep);
+}
+
+/* --- 2. NAVIGASI BERGERAK (Sticky Effect) --- */
+.navbar-section {
+    background: var(--white);
+    transition: var(--transition);
+    z-index: 1050;
+}
+
+/* Class ini akan aktif dengan JS saat scroll */
+.navbar-section.scrolled {
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.navbar-section.scrolled .top-bar {
+    display: none !important; /* Sembunyikan top bar saat scroll kebawah */
+}
+
+.top-bar {
+    background: var(--sage-deep);
+    color: var(--white);
+}
+
+.top-links a {
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--sage-deep);
+}
+
+.logo span { color: var(--sage-primary); }
+
+/* Search Bar */
+.search-container-editorial {
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.btn-editorial-search {
+    background: #FF6F61; /* Warna aksen oranye ala referensi gambar */
+    color: white;
+    border-radius: 0;
+    padding: 10px 25px;
+}
+
+.btn-editorial-search:hover {
+    background: var(--sage-deep);
+    color: white;
+}
+
+/* Menu Navigasi Bawah */
+.main-menu a {
+    text-decoration: none;
+    color: var(--sage-deep);
+    font-weight: 500;
+    margin-right: 30px;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    bottom: 0; left: 0;
+    background: var(--sage-primary);
+    transition: var(--transition);
+}
+
+.main-menu a:hover::after, .main-menu a.active::after {
+    width: 100%;
+}
+
+.btn-login-editorial {
+    border: 1px solid var(--sage-deep);
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.btn-login-editorial:hover {
+    background: var(--sage-deep);
+    color: white;
+}
+
+/* --- 3. HERO SECTION --- */
+.hero-editorial {
+    padding: 100px 0;
+    background: var(--sage-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.editorial-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.badge-sage {
+    background: var(--sage-deep);
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.hero-gif {
+    width: 100%;
+    border: 1px solid var(--border-soft);
+    box-shadow: 20px 20px 0px var(--sage-primary); /* Shadow Kotak ala referensi */
+}
+
+/* --- 4. MOOD & RECOMMENDATION --- */
+.mood-card-item {
+    background: var(--cream-white);
+    border: 1px solid var(--border-soft);
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mood-card-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--sage-deep);
+    box-shadow: 0 15px 30px rgba(64, 81, 59, 0.1);
+}
+
+.mood-icon { font-size: 3rem; margin-bottom: 15px; }
+
+.rec-grid-wrapper {
+    background: var(--white);
+    border: 1px solid var(--sage-deep);
+    box-shadow: 15px 15px 0px var(--sage-soft);
+}
+
+/* --- 5. AUTH & FORMS --- */
+.auth-card {
+    box-shadow: 20px 20px 0px var(--sage-primary);
+}
+
+.editorial-input {
+    border-radius: 0;
+    border: 1px solid var(--border-soft);
+    padding: 12px;
+    background: #F9F9F9;
+}
+
+.btn-green-editorial {
+    background: var(--sage-deep);
+    color: white;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.btn-green-editorial:hover {
+    background: var(--sage-primary);
+}
+
+/* --- 6. UTILITIES --- */
+.shadow-custom {
+    box-shadow: 10px 10px 0px var(--border-soft);
+}
+
+.btn-link {
+    color: var(--sage-deep);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer {
+    background: var(--white);
+}
+                                                         
+/* Mood Tracker Kecil */
+.mood-card-mini {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mood-card-mini:hover {
+    background: var(--sage-mist);
+    transform: translateY(-5px);
+    border-color: var(--sage-primary);
+}
+
+.mood-emoji { font-size: 1.8rem; margin-bottom: 5px; }
+.mood-card-mini span { font-size: 0.85rem; font-weight: 600; color: var(--sage-deep); }
+
+/* Box Rekomendasi Fit */
+.rec-box-editorial {
+    background: var(--white);
+    border: 2px solid var(--sage-deep);
+    box-shadow: 12px 12px 0px var(--sage-primary); /* Shadow kotak khas referensi */
+    border-radius: 0;
+}
+
+.rec-item-card {
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.rec-item-card h3 { font-size: 1.1rem; margin-bottom: 15px; border-bottom: 2px solid var(--sage-soft); display: inline-block; }
+
+/* Pemisah Section */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sage-primary), transparent);
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Memastikan Iframe Video Fit */
+.ratio iframe {
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+}
+
+/* --- SECTION SPACING & BG --- */
+section {
+    padding: 100px 0; /* Memberikan napas yang lega seperti desain Bookory */
+}
+
+.bg-white-clean {
+    background-color: var(--white);
+}
+
+.bg-sage-mist {
+    background-color: var(--sage-mist);
+}
+
+.hr-divider {
+    border: 0;
+    border-top: 1px solid var(--border-soft);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.section-shadow-top {
+    box-shadow: inset 0 10px 15px -10px rgba(0,0,0,0.05);
+}
+
+/* --- EVENT PAGE --- */
+.event-card-editorial {
+    background: #fff;
+    border: 1px solid #DDE2D5;
+    transition: all 0.3s ease;
+}
+
+.event-card-editorial:hover {
+    box-shadow: 10px 10px 0px #9DC08B; 
+    transform: translate(-5px, -5px);
+}
+
+.event-img-box img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    display: block;
+}
+
+.event-card-editorial {
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.event-body-editorial {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.date-tag {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: #fff;
+    padding: 8px 12px;
+    text-align: center;
+    box-shadow: 5px 5px 0px #40513B;
+}
+
+.date-tag strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+.date-tag span { font-size: 0.7rem; color: #666; font-weight: 600; }
+
+.cat-tag {
+    position: absolute;
+    bottom: 15px; right: 15px;
+    background: #40513B;
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.filter-btns-editorial button {
+    border: 1px solid #40513B;
+    background: transparent;
+    padding: 8px 20px;
+    transition: 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.filter-btns-editorial button.active, 
+.filter-btns-editorial button:hover {
+    background: #40513B;
+    color: white;
+}
+
+.event-body-editorial h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #40513B;
+}
+
+/* --- HERO FULLSCREEN EVENT --- */
+.event-hero-fullscreen {
+    position: relative;
+    height: 80vh; 
+    background: url('hero-event.jpg') no-repeat center center;
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2; 
+}
+
+.badge-outline-white {
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.btn-filter-white {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+.btn-filter-white:hover, .btn-filter-white.active {
+    background: #fff;
+    color: #40513B;
+}
+
+.event-hero-fullscreen h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
+}
+
+/* --- NAVIGASI TOP BAR (ILUSTRASI & KOMUNITAS) --- */
+.top-links .top-link-item {
+    color: #f4f7f3;
+    text-decoration: none;
+    padding-bottom: 5px; 
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.top-links .top-link-item.active {
+    color: #f4f7f3 !important; 
+    border-bottom: 2px solid #40513B; 
+}
+
+.top-links .top-link-item:hover {
+    color: #40513B;
+    border-bottom: 2px solid #9DC08B; 
+}
+
+/* Animasi */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+#eventListContainer .border-success {
+    border-color: #40513B !important;
+    background-color: #fcfdfc !important;
+}
+
+/* --- KOLEKSI --- */
+
+/* Container Gambar Buku */
+.book-img-container {
+    width: 100%;
+    max-width: 140px; 
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.book-img-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.book-card-editorial:hover img {
+    transform: scale(1.05);
+}
+
+.small-title {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    height: 35px;
+    overflow: hidden;
+}
+
+/* User Space & Artikel */
+.shadow-custom {
+    box-shadow: 10px 10px 0px #e9ede9;
+}
+
+.article-card-large {
+    border-radius: 0;
+    border-left: 4px solid #40513B !important;
+}
+
+.bg-sage-mist {
+    background-color: #f8faf8;
+}
+
+.x-small { font-size: 0.75rem; }
+.italic { font-style: italic; }
+
+.hero-koleksi-v2 {
+    position: relative;
+    height: 70vh; 
+    background: url('background1.gif') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.hero-content-v2 .editorial-title {
+    color: #ffffff !important; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+}
+
+.overlay-hero {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px); 
+}
+
+.hero-content-v2 {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-filter {
+    border: none;
+    background: transparent;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #3c5c47;
+    transition: 0.3s;
+}
+
+.btn-filter.active, .btn-filter:hover {
+    background-color: #40513B;
+    color: white !important;
+}
+
+.book-card-editorial {
+    transition: transform 0.3s ease;
+}
+
+.book-card-editorial:hover {
+    transform: translateY(-10px);
+}
+
+.line-green {
+    width: 50px;
+    height: 3px;
+    background: #40513B;
+    margin-top: 5px;
+}
+
+/* Dropdown */
+.main-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 5px !important; 
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu a, 
+.main-menu .dropdown-toggle {
+    text-decoration: none !important;
+    padding: 8px 10px !important; 
+    margin: 0 !important;
+    display: inline-block;
+    color: #444;
+}
+
+.main-menu .dropdown {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.main-menu .dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.main-menu a:hover, 
+.main-menu .dropdown-toggle:hover {
+    color: #40513B;
+    text-decoration: none !important;
+}
+
+.dropdown-menu {
+    margin-top: 15px !important;
+}
+
+/* Profil Admin */
+.bg-sage-mist {
+    background-color: #f8faf8;
+}
+
+.profile-img-main {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.shadow-custom {
+    box-shadow: 20px 20px 0px #40513B; /* Bayangan kotak hijau di belakang foto */
+}
+
+.btn-outline-sage {
+    border: 1px solid #40513B;
+    color: #40513B;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-sage:hover {
+    background: #40513B;
+    color: white;
+}
+
+.badge-sage {
+    background-color: #40513B;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    border-radius: 50px;
+}
+
+.profile-text p {
+    line-height: 1.8;
+}
+
+/* Navigasi */
+.floating-back-btn {
+    position: fixed;
+    left: 20px;         
+    top: 50%;          
+    transform: translateY(-50%); 
+    width: 50px;
+    height: 50px;
+    background-color: #40513B; 
+    color: white !important;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;      
+    transition: all 0.3s ease;
+}
+
+.floating-back-btn:hover {
+    background-color: #606C5D;
+    left: 10px;         
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-back-btn:hover i {
+    transform: translateX(-3px);
+}
+
+.floating-back-btn i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .floating-back-btn {
+        width: 40px;
+        height: 40px;
+        left: 10px;
+    }
+}
+
+/* Styling Section Game */
+.text-sage {
+    color: #40513B;
+}
+
+.game-visual-box {
+    border-radius: 15px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.game-visual-box:hover {
+    transform: translateY(-5px);
+}
+
+.garden-display img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    background: #fdfdfd;
+}
+
+.game-stats .stat-item {
+    background: #f8faf8;
+    padding: 10px 20px;
+    border-radius: 8px;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.btn-green-editorial {
+    background-color: #40513B;
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-green-editorial:hover {
+    background-color: #606C5D;
+    color: white;
+    box-shadow: 0 4px 12px rgba(64, 81, 59, 0.2);
+}
