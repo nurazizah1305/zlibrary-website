@@ -53,43 +53,40 @@
             </div>
         </div>
 
-        <div class="col-lg-6 d-none d-lg-block">
+        <div class="nav-bottom border-top d-none d-lg-block">
             <div class="container d-flex align-items-center py-2">
-
-                <nav class="main-menu d-flex align-items-center">
-                    <a href="index.html" class="active">Home</a>
-                    <a href="event.html">Event</a>
+                <nav class="main-menu">
+                    <a href="index.html">Home</a>
+                    <a href="event.html" class="active">Event</a>
                     <a href="koleksi.html">Koleksi</a>
-                    
+                     <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Layanan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownLayanan">
+                        <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
+                        <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
+                        <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
+                        <li><a class="dropdown-item" href="playlist.html">Playlist</a></li> <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
+                    </ul>
+                </div>
+                  
                     <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
-                            Layanan
-                        </a>
-                        <ul class="dropdown-menu shadow-sm border-0">
-                            <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
-                            <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
-                            <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
-                            <li><a class="dropdown-item" href="playlist.html">Playlist</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
-                            Bantuan
-                        </a>
-                        <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
-                            <li><a class="dropdown-item" href="panduan.html">Panduan Penggunaan</a></li>
-                            <li><a class="dropdown-item" href="faq.html">Tanya Jawab (FAQ)</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
-                        </ul>
-                    </div>
+                    <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
+                        Bantuan
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
+                        <li><a class="dropdown-item" href="panduan.html">Panduan Penggunaan</a></li>
+                        <li><a class="dropdown-item" href="faq.html">Tanya Jawab (FAQ)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
+                    </ul>
+                </div>
                 </nav>
             </div>
-        </div>
-            
+        </div>  
+        
     </header>
 
     <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
