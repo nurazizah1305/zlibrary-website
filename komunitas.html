@@ -13,59 +13,64 @@
 <body class="community-page">
 
     <header class="navbar-section shadow-sm sticky-top bg-white">
-        <div class="top-bar py-2 border-bottom d-none d-md-block">
+        <div class="top-bar py-2 border-bottom">
             <div class="container d-flex justify-content-between align-items-center">
                 <p class="small m-0">Literary for Mental Health & Growth</p>
                 <div class="top-links small">
-                    <a href="ilustrasi.html" class="top-link-item text-decoration-none">Ilustrasi</a>
+                    <a href="ilustrasi.html" class="top-link-item text-decoration-none me-2">Ilustrasi</a>
                     <a href="komunitas.html" class="top-link-item text-decoration-none active">Komunitas</a>
                 </div>
             </div>
         </div>
 
         <div class="main-header container py-3">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-6">
+            <div class="row align-items-center g-2">
+                <div class="col-md-3 col-4">
                     <a href="index.html" class="logo text-decoration-none">
                         <i class="fas fa-seedling"></i> Grow<span>Lib</span>
                     </a>
                 </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <div class="input-group search-container-editorial">
-                        <input type="text" class="form-control" placeholder="Cari topik diskusi...">
-                        <button class="btn btn-editorial-search" type="button"><i class="fas fa-search"></i></button>
+                
+                <div class="col-md-6 col-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" id="searchInput" placeholder="Cari topik diskusi...">
+                        <button class="btn btn-success btn-sm" type="button" onclick="searchBook()">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
                 </div>
+
                 <div class="col-lg-3 col-6 text-end">
-                    <div class="user-profile-nav">
-                        <span class="small fw-bold me-2">Halo, Reader!</span>
-                        <img src="https://ui-avatars.com/api/?name=Reader&background=9DC08B&color=fff" class="rounded-circle" width="35">
-                    </div>
+                    <button class="btn btn-login-editorial" data-bs-toggle="modal" data-bs-target="#authModal">
+                    Login / Register
+                    </button>
                 </div>
             </div>
-        </div>
+        </div> 
 
-        <div class="nav-bottom border-top d-none d-lg-block">
-            <div class="container d-flex align-items-center py-2">
-                <nav class="main-menu">
-                    <a href="index.html">Home</a>
-                    <a href="event.html">Event</a>
-                    <a href="koleksi.html">Koleksi</a>
-                     <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="nav-bottom border-top bg-white">
+        <div class="container">
+            <nav class="main-menu d-flex flex-nowrap overflow-visible py-2 ps-0"> 
+                <a href="index.html" class="text-nowrap">Home</a>
+                <a href="event.html" class="text-nowrap">Event</a>
+                <a href="koleksi.html" class="text-nowrap">Koleksi</a>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle text-nowrap" id="dropdownLayanan" data-bs-toggle="dropdown" aria-expanded="false">
                         Layanan
                     </a>
                     <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownLayanan">
                         <li><a class="dropdown-item" href="ruang-cerita.html">Ruang Cerita</a></li>
                         <li><a class="dropdown-item" href="challenge.html">Program Challenge</a></li>
                         <li><a class="dropdown-item" href="refleksi.html">Refleksi Diri</a></li>
-                        <li><a class="dropdown-item" href="playlist.html">Playlist</a></li> <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="playlist.html">Playlist</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="diary.html">My Diary</a></li>
                     </ul>
                 </div>
-                  
-                    <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
+
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle text-nowrap" id="dropdownBantuan" data-bs-toggle="dropdown" aria-expanded="false">
                         Bantuan
                     </a>
                     <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="dropdownBantuan">
@@ -75,9 +80,9 @@
                         <li><a class="dropdown-item" href="kontak.html">Kontak Pengelola</a></li>
                     </ul>
                 </div>
-                </nav>
-            </div>
+            </nav>
         </div>
+    </div>
     </header>
 
     <div id="joinAlert" class="container mt-4 d-none">
