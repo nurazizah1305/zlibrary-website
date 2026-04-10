@@ -322,3 +322,82 @@ function waterPlant() {
         alert("Wah, tamanmu sudah sangat cantik! Tunggu bunga baru besok ya.");
     }
 }
+
+// 12. LOGIN DAN SIGNUP
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginBtnNav = document.querySelector('.btn-login-editorial');
+
+    // --- 1. ATURAN PROTEKSI HALAMAN ---
+    
+    const protectedPages = ['event.html', 'koleksi.html', 'garden.html', 'komunitas.html'];
+    const currentPage = window.location.pathname.split("/").pop();
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (protectedPages.includes(currentPage) && !isLoggedIn) {
+        alert("Akses ditolak! Silakan Login terlebih dahulu.");
+        window.location.href = 'index.html'; 
+    }
+
+    // --- 2. LOGIKA SIGNUP ---
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('s-name').value;
+            const email = document.getElementById('s-email').value;
+            const pass = document.getElementById('s-pass').value;
+
+            let users = JSON.parse(localStorage.getItem('growlib_users')) || [];
+
+            if (users.find(u => u.email === email)) {
+                return alert("Email sudah terdaftar!");
+            }
+
+            users.push({ name, email, pass });
+            localStorage.setItem('growlib_users', JSON.stringify(users));
+            alert("Pendaftaran Berhasil! Silakan Login.");
+            
+            const loginTab = new bootstrap.Tab(document.querySelector('[data-bs-target="#login"]'));
+            loginTab.show();
+        });
+    }
+
+    // --- 3. LOGIKA LOGIN ---
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('l-email').value;
+            const pass = document.getElementById('l-pass').value;
+
+            let users = JSON.parse(localStorage.getItem('growlib_users')) || [];
+            const user = users.find(u => u.email === email && u.pass === pass);
+
+            if (user) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userName', user.name);
+                alert(`Selamat datang kembali, ${user.name}!`);
+                window.location.reload(); 
+            } else {
+                alert("Email atau Password salah!");
+            }
+        });
+    }
+
+    // --- 4. TAMPILAN NAVBAR SETELAH LOGIN ---
+    if (isLoggedIn && loginBtnNav) {
+        const userName = localStorage.getItem('userName');
+        loginBtnNav.innerHTML = `<i class="fas fa-user-circle"></i> ${userName}`;
+        loginBtnNav.classList.replace('btn-login-editorial', 'btn-outline-success');
+        
+        // Klik tombol nama untuk Logout
+        loginBtnNav.onclick = () => {
+            if(confirm("Apakah kamu ingin Logout?")) {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userName');
+                window.location.href = 'index.html';
+            }
+        };
+    }
+});
