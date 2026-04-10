@@ -30,14 +30,9 @@ h1, h2, h3, .logo {
     z-index: 1050;
 }
 
-/* Class ini akan aktif dengan JS saat scroll */
 .navbar-section.scrolled {
     padding: 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.navbar-section.scrolled .top-bar {
-    display: none !important; /* Sembunyikan top bar saat scroll kebawah */
 }
 
 .top-bar {
@@ -62,13 +57,6 @@ h1, h2, h3, .logo {
     border: 1px solid var(--border-soft);
     border-radius: 4px;
     overflow: hidden;
-}
-
-.btn-editorial-search {
-    background: #FF6F61; /* Warna aksen oranye ala referensi gambar */
-    color: white;
-    border-radius: 0;
-    padding: 10px 25px;
 }
 
 .btn-editorial-search:hover {
@@ -144,7 +132,7 @@ h1, h2, h3, .logo {
 .hero-gif {
     width: 100%;
     border: 1px solid var(--border-soft);
-    box-shadow: 20px 20px 0px var(--sage-primary); /* Shadow Kotak ala referensi */
+    box-shadow: 20px 20px 0px var(--sage-primary); 
 }
 
 /* --- 4. MOOD & RECOMMENDATION --- */
@@ -235,7 +223,7 @@ footer {
 .rec-box-editorial {
     background: var(--white);
     border: 2px solid var(--sage-deep);
-    box-shadow: 12px 12px 0px var(--sage-primary); /* Shadow kotak khas referensi */
+    box-shadow: 12px 12px 0px var(--sage-primary); 
     border-radius: 0;
 }
 
@@ -263,7 +251,7 @@ footer {
 
 /* --- SECTION SPACING & BG --- */
 section {
-    padding: 100px 0; /* Memberikan napas yang lega seperti desain Bookory */
+    padding: 100px 0; 
 }
 
 .bg-white-clean {
@@ -617,7 +605,7 @@ section {
 }
 
 .shadow-custom {
-    box-shadow: 20px 20px 0px #40513B; /* Bayangan kotak hijau di belakang foto */
+    box-shadow: 20px 20px 0px #40513B; 
 }
 
 .btn-outline-sage {
